@@ -1,8 +1,18 @@
 Star Wars
 - Movies (GET Movies, GET Movie, POST Review, POST Movie, PUT Movie, DELETE Review)
--- The Last Jedi {Reviews[], Cast[], Summary, Release Date}
+-- {Title, Reviews[], Cast[], Summary, Release Date}
+
 - Characters (GET Characters, Get Character, POST Character, PUT Character)
--- Han Solo {Actor/Actress, Age, ?}
+-- Han Solo {Actor/Actress, Age, Appearances}
+
+- Reviews (GET Reviews, GET Review, POST Review, DELETE Review)
+-- {Title, Author, ItemReviewed, Description, Stars, DateCreated}
+
+- Cast
+-- {ActorName, CharacterName}
+
+
+
 - TV Shows (GET TVShows, GET TVShow, POST Review, POST TVShow, PUT TVShow, DELETE Review)
 -- Rebels {Reviews, Cast[], Summary, Episodes[], Air Date}
 - Toys (GET Toys, POST Toy)
@@ -14,3 +24,5 @@ Star Wars
 - Decorative Products
 -- Blankets
 -- Pillows
+- Publications
+

@@ -1,0 +1,9 @@
+{
+  "movies": [
+    { "id": 1, "title": "A New Hope", "Summary": "xyz", "Cast": [{"ActorName": "Carrie Fischer", "CharacterName": "Leia Organa"}, {"ActorName": "Mark Hamill", "CharacterName": "Luke Skywalker"}] }
+  ],
+  "comments": [
+    { "id": 1, "body": "some comment", "postId": 1 }
+  ],
+  "profile": { "name": "typicode" }
+}

@@ -1,9 +1,53 @@
 {
-  "movies": [
-    { "id": 1, "title": "A New Hope", "Summary": "xyz", "Cast": [{"ActorName": "Carrie Fischer", "CharacterName": "Leia Organa"}, {"ActorName": "Mark Hamill", "CharacterName": "Luke Skywalker"}], "Release Date": "6/1/1977", "Reviews": [{}] }
+  "movies": 
+  [
+    { "id": 1, 
+      "title": "A New Hope", 
+      "summary": "xyz", 
+      "cast": 
+      [
+        {"character": 1}, 
+        {"character": 2}
+      ], 
+      "releaseDate": "6/1/1977", 
+      "reviews": [{}] 
+    },
+    { "id": 2, 
+      "title": "Empire Strikes Back", 
+      "summary": "xyz", 
+      "cast": 
+      [
+        {"character": 1}, 
+        {"character": 2}
+      ], 
+      "releaseDate": "6/1/1977", 
+      "reviews": [{}] 
+    },
+    { "id": 3, 
+      "title": "Return of the Jedi", 
+      "summary": "xyz", 
+      "cast": 
+      [
+        {"character": 1}, 
+        {"character": 2}
+      ], 
+      "releaseDate": "6/1/1977", 
+      "reviews": [{}] 
+    }
   ],
   "characters": [
-    { "id": 1, "CharacterName": "Chewbacca", "Appearances": "", "ActorName": "Peter Mayhew" }
+    { "id": 1, "characterName": "Chewbacca", "appearances": "", "actorName": "Peter Mayhew" },
+    { "id": 2, "characterName": "Leia Organa", "appearances": "", "actorName": "Carrie Fischer"},
+    { "id": 3, "characterName": "Luke Skywalker", "appearances":"", "actorName": "Mark Hamill"}
   ],
-  "profile": { "name": "typicode" }
+  "reviews": 
+  [
+    { "id": "1",
+      "author": "xyz",
+      "itemReviewed": 1,
+      "description": "what a great movie!",
+      "stars": 4,
+      "dateCreated": "1977-06-01"
+     }
+  ]
 }

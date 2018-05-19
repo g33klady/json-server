@@ -1,21 +1,27 @@
 {
   "movies": [
     {
-      "id": 1,
       "title": "A New Hope",
-      "summary": "xyz",
+      "summary": "this is a test",
       "cast": [
         {
-          "character": 1
+          "name": "Chewbacca",
+          "actor": "Peter Mayhew"
         },
         {
-          "character": 2
+          "name": "Leia Organa",
+          "actor": "Carrie Fischer"
+        },
+        {
+          "name": "Luke Skywalker",
+          "actor": "Mark Hamill"
         }
       ],
       "releaseDate": "6/1/1977",
       "reviews": [
         {}
-      ]
+      ],
+      "id": 1
     },
     {
       "id": 2,
@@ -23,10 +29,16 @@
       "summary": "xyz",
       "cast": [
         {
-          "character": 1
+          "name": "Chewbacca",
+          "actor": "Peter Mayhew"
         },
         {
-          "character": 2
+          "name": "Leia Organa",
+          "actor": "Carrie Fischer"
+        },
+        {
+          "name": "Luke Skywalker",
+          "actor": "Mark Hamill"
         }
       ],
       "releaseDate": "6/1/1977",
@@ -40,16 +52,45 @@
       "summary": "xyz",
       "cast": [
         {
-          "character": 1
+          "name": "Chewbacca",
+          "actor": "Peter Mayhew"
         },
         {
-          "character": 2
+          "name": "Leia Organa",
+          "actor": "Carrie Fischer"
+        },
+        {
+          "name": "Luke Skywalker",
+          "actor": "Mark Hamill"
         }
       ],
       "releaseDate": "6/1/1977",
       "reviews": [
         {}
       ]
+    },
+    {
+      "title": "Another movie",
+      "summary": "this is a test",
+      "cast": [
+        {
+          "name": "Chewbacca",
+          "actor": "Peter Mayhew"
+        },
+        {
+          "name": "Leia Organa",
+          "actor": "Carrie Fischer"
+        },
+        {
+          "name": "Luke Skywalker",
+          "actor": "Mark Hamill"
+        }
+      ],
+      "releaseDate": "6/1/1977",
+      "reviews": [
+        {}
+      ],
+      "id": 4
     }
   ],
   "characters": [

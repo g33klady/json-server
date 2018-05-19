@@ -27,20 +27,15 @@
         </div>
       </div>
 
-      <div class="row">
-        <div class="col-md-12">
-          <p>Add / edit a couple of items, then check JSON backend from command line:</p>
-          <pre>curl http://localhost:3000/issues</pre>
-          <p>The data is live</p>
-        </div>
-      </div>
-
       <script type="text/ng-template" id="movieList.html">
         <table class="table">
           <thead>
           <tr>
             <th>id</th>
             <th>title</th>
+            <th>summary</th>
+            <th>view</th>
+            <th>edit</th>
             <th>
               <a href="#/new" title="Add new movies">
                 <span class="glyphicon glyphicon-plus"></span>
@@ -52,6 +47,12 @@
           <tr ng-repeat="movie in movies">
             <td>{{movie.id}}</td>
             <td>{{movie.title}}</td>
+            <td>{{movie.summary}}</td>
+            <td>
+              <a href="#/view/{{movie.id}}" title="view movie">
+                <span class="glyphicon glyphicon-eye-open"></span>
+              </a>
+            </td>
             <td>
               <a href="#/edit/{{movie.id}}" title="edit movie">
                 <span class="glyphicon glyphicon-edit"></span>
@@ -61,18 +62,55 @@
           </tbody>
         </table>
       </script>
+      
+      <script type="text/ng-template" id="movieView.html">
+        <div class="panel panel-primary" ng-show="movie.id">
+                <div class="panel-heading">{{movie.title}}
+                        <a href="#/edit/{{movie.id}}" title="edit movie" class="btn btn-default">Edit Movie
+                          </a>
+                </div>
+                <table class="table">
+                        <thead>
+                        <tr>
+                          <th>id</th>
+                          <th>title</th>
+                          <th>summary</th>
+                          <th>release date</th>
+                          <th>cast</th>
+                          <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                          <td>{{movie.id}}</td>
+                          <td>{{movie.title}}</td>
+                          <td>{{movie.summary}}</td>
+                          <td>{{movie.releaseDate}}</td>
+                          <td>
+                              <ul>
+                                  <li ng-repeat="character in movie.cast"><strong>{{character.name}}</strong> played by <strong>{{character.actor}}</strong></li>
+                              </ul>
+                          </td>
+                        </tr>
+                        </tbody>
+                      </table>
+        </div>
+      </script>
 
-      <script type="text/ng-template" id="movieDetail.html">
+      <script type="text/ng-template" id="movieEdit.html">
       <form name="myForm" class="form-horizontal" role="form">
         <div class="form-group" ng-show="movie.id">
           <label for="id">ID:</label>
           <span id="id" name="id">{{movie.id}}</span>
         </div>
-
         <div class="form-group">
-          <label for="title">Text:</label>
-          <textarea id="title" name="title"
-            ng-model="movie.title"></textarea>
+                <label for="title">Title:</label>
+                <span id="title" name="title">{{movie.title}}</span>
+        </div>
+        <div class="form-group">
+          <label for="summary">Summary:</label>
+          <textarea id="summary" name="summary"
+            ng-model="movie.summary"></textarea>
         </div>
 
           <a href="#/" class="btn btn-default">Cancel</a>
@@ -82,6 +120,30 @@
                   ng-show="movie.id" class="btn btn-danger">Delete</button>
         </form>
       </script>
+
+      <script type="text/ng-template" id="movieNew.html">
+        <form name="myForm" class="form-horizontal" role="form">
+          <div class="form-group" ng-show="movie.id">
+            <label for="id">ID:</label>
+            <span id="id" name="id">{{movie.id}}</span>
+          </div>
+          <div class="form-group">
+                  <label for="title">Title:</label>
+                  <input type="text" id="title" name="title" ng-model="movie.title"></input>
+          </div>
+          <div class="form-group">
+            <label for="summary">Summary:</label>
+            <textarea id="summary" name="summary"
+              ng-model="movie.summary"></textarea>
+          </div>
+          <div class="form-group">
+                <label for="releaseDate">Release Date:</label>
+                <input type="text" id="releaseDate" name="releaseDate" ng-model="movie.releaseDate"></input>
+        </div>
+            <a href="#/" class="btn btn-default">Cancel</a>
+            <button ng-click="save()" class="btn btn-primary">Save</button>
+          </form>
+        </script>
     </div>
 
   </body>

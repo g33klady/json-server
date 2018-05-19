@@ -7,18 +7,27 @@ angular.module('project', ['restangular', 'ngRoute']).
       }).
       when('/edit/:movieId', {
         controller:MovieEditCtrl,
-        templateUrl:'movieDetail.html',
+        templateUrl:'movieEdit.html',
         resolve: {
           movie: function(Restangular, $route) {
             var id = $route.current.params.movieId;
-            var title = $route.current.params.movieTitle;
-            return Restangular.one('movies', id, title).get();
+            return Restangular.one('movies', id).get();
           }
         }
       }).
       when('/new', {
         controller:MovieCreateCtrl,
-        templateUrl:'movieDetail.html'
+        templateUrl:'movieNew.html'
+      }).
+      when('/view/:movieId', {
+        controller:MovieViewCtrl,
+        templateUrl:'movieView.html',
+        resolve: {
+          movie: function(Restangular, $route) {
+            var id = $route.current.params.movieId;
+            return Restangular.one('movies', id).get();
+          }
+        }
       }).
       otherwise({redirectTo:'/'});
 
@@ -28,6 +37,10 @@ angular.module('project', ['restangular', 'ngRoute']).
 function MovieListCtrl($scope, Restangular) {
   $scope.movies = Restangular.all("movies").getList().$object;
 }
+
+function MovieViewCtrl($scope, $location, Restangular, movie) { 
+    $scope.movie = movie;
+  }
 
 function MovieCreateCtrl($scope, $location, Restangular) {
   $scope.save = function() {
